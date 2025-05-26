@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/FinalLogo2.png'
+import React, { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import logo from "../assets/images/finalLogo2.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -19,7 +19,6 @@ const Navbar = () => {
             src={logo}
             alt="Seedora Logo"
             className="h-12 w-12 object-contain scale-400"
-
           />
         </Link>
 
@@ -57,8 +56,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? 'md:hidden fixed left-0 top-0 w-full h-full bg-[#5C7B4C] ease-in-out duration-500'
-            : 'fixed left-[-100%] top-0 w-full h-full ease-in-out duration-500'
+            ? "md:hidden fixed left-0 top-0 w-full h-full bg-[#5C7B4C] ease-in-out duration-500"
+            : "fixed left-[-100%] top-0 w-full h-full ease-in-out duration-500"
         }
       >
         <div className="flex items-center justify-between p-4">
