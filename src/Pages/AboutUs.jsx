@@ -1,7 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Footer from "../Components/Footer";
 
 // Animation Variants
 const fadeUp = {
@@ -17,7 +15,7 @@ const AboutUs = () => {
   return (
     <section className="bg-[#DAD7CD] text-[#344E41]">
       {/* Hero */}
-      
+
       <div className="px-6 md:px-20 py-20 text-center">
         <motion.h1
           className="text-5xl font-extrabold"
@@ -37,7 +35,9 @@ const AboutUs = () => {
           variants={fadeUp}
           custom={1}
         >
-          Rooted in purpose, grown through creativity — Seedora blends nature-inspired strategies with modern marketing to make your brand unforgettable.
+          Rooted in purpose, grown through creativity — Seedora blends
+          nature-inspired strategies with modern marketing to make your brand
+          unforgettable.
         </motion.p>
         <motion.div
           initial="hidden"
@@ -76,7 +76,8 @@ const AboutUs = () => {
           variants={fadeUp}
           custom={1}
         >
-          Before we plant ideas, we understand your soil — your brand, audience, and purpose. Because thriving results start with grounded roots.
+          Before we plant ideas, we understand your soil — your brand, audience,
+          and purpose. Because thriving results start with grounded roots.
         </motion.p>
       </div>
 
@@ -94,11 +95,26 @@ const AboutUs = () => {
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            ["Organic Strategy", "No gimmicks—just research-backed, high-conversion digital tactics."],
-            ["Emotional Branding", "We tell stories that stick, making your brand human and memorable."],
-            ["Eco-Aware Creativity", "Design and campaigns inspired by sustainability and impact."],
-            ["Holistic Funnel Thinking", "From awareness to loyalty—every step matters."],
-            ["Reel Storytelling", "Short-form content that connects deeply and converts instantly."],
+            [
+              "Organic Strategy",
+              "No gimmicks—just research-backed, high-conversion digital tactics.",
+            ],
+            [
+              "Emotional Branding",
+              "We tell stories that stick, making your brand human and memorable.",
+            ],
+            [
+              "Eco-Aware Creativity",
+              "Design and campaigns inspired by sustainability and impact.",
+            ],
+            [
+              "Holistic Funnel Thinking",
+              "From awareness to loyalty—every step matters.",
+            ],
+            [
+              "Reel Storytelling",
+              "Short-form content that connects deeply and converts instantly.",
+            ],
             ["Data + Intuition", "Analytics fuel us, but empathy guides us."],
           ].map(([title, desc], i) => (
             <motion.div
@@ -110,7 +126,9 @@ const AboutUs = () => {
               variants={fadeUp}
               custom={i + 1}
             >
-              <h4 className="text-xl font-semibold mb-2 text-[#3A5A40]">{title}</h4>
+              <h4 className="text-xl font-semibold mb-2 text-[#3A5A40]">
+                {title}
+              </h4>
               <p className="text-[#344E41]">{desc}</p>
             </motion.div>
           ))}
@@ -137,7 +155,10 @@ const AboutUs = () => {
           variants={fadeUp}
           custom={1}
         >
-          Seedora began with a belief: that marketing should feel as natural as growth. Founded by creators who care about both people and planet, we help purpose-led brands tell their story, connect with their audience, and scale sustainably.
+          Seedora began with a belief: that marketing should feel as natural as
+          growth. Founded by creators who care about both people and planet, we
+          help purpose-led brands tell their story, connect with their audience,
+          and scale sustainably.
         </motion.p>
       </div>
 
@@ -154,28 +175,29 @@ const AboutUs = () => {
           Why Clients Choose Us
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {["“They just got us.”", "“Our sales tripled in 6 months.”", "“Seedora is our secret weapon.”"].map(
-            (quote, i) => (
-              <motion.div
-                key={i}
-                className={`p-6 border-2 rounded-xl ${
-                  i === 1 ? "border-[#588157]" : "border-[#3A5A40]"
-                } bg-white`}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                custom={i + 1}
-              >
-                <p className="italic text-lg">{quote}</p>
-              </motion.div>
-            )
-          )}
+          {[
+            "“They just got us.”",
+            "“Our sales tripled in 6 months.”",
+            "“Seedora is our secret weapon.”",
+          ].map((quote, i) => (
+            <motion.div
+              key={i}
+              className={`p-6 border-2 rounded-xl ${
+                i === 1 ? "border-[#588157]" : "border-[#3A5A40]"
+              } bg-white`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              custom={i + 1}
+            >
+              <p className="italic text-lg">{quote}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
-
 
 export default AboutUs;

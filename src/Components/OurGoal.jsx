@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const taglines = [
   "Dive into a current of creativity",
@@ -42,7 +41,8 @@ const OurGoal = () => {
     <motion.div
       className="bg-white px-6 py-3 rounded-full"
       style={{
-        boxShadow: "0 -8px 15px rgba(0, 0, 0, 0.25), 0 8px 15px rgba(0, 0, 0, 0.25)",
+        boxShadow:
+          "0 -8px 15px rgba(0, 0, 0, 0.25), 0 8px 15px rgba(0, 0, 0, 0.25)",
       }}
     >
       <p className="text-xl md:text-2xl font-extrabold text-black text-center">
