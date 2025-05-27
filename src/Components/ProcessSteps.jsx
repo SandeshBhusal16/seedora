@@ -44,39 +44,46 @@ const boxVariants = {
 
 export default function HowSeedoraDelivers() {
   return (
-    <section className="relative bg-[#DAD7CD] text-[#344E41] py-24 overflow-hidden">
-      <h2 className="text-4xl font-bold text-center mb-20">
+    <section className="relative bg-[#DAD7CD] text-[#344E41] py-16 md:py-24 overflow-hidden">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-20">
         How Seedora Delivers
       </h2>
 
-      <div className="relative max-w-6xl mx-auto h-[700px]">
-        {/* Center Illustration */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <img
-            src="src/assets/images/working2b.png"
-            alt="Center Illustration"
-            className="w-80 md:w-96 h-auto"
-          />
-        </div>
+      {/* Layout for small screens: Stack everything vertically */}
+      <div className="flex justify-center w-full">
+        <div className="relative max-w-6xl min-h-[700px] md:h-[700px] px-4 w-full ">
+          {/* Center Illustration */}
+          <div className="  md:absolute top-0 md:top-1/2 left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10 mb-10 md:mb-0">
+            <img
+              src="src/assets/images/working2b.png"
+              alt="Center Illustration"
+              className="w-64 sm:w-72 md:w-96 mx-auto h-auto"
+            />
+          </div>
 
-        {/* Feature Boxes */}
-        {steps.map(({ id, title, desc, style, icon: Icon }, i) => (
-          <motion.div
-            key={id}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={boxVariants}
-            className={`absolute w-72 ${style} p-6 rounded-2xl shadow-md bg-gradient-to-br from-[#A3B18A] to-[#DAD7CD]`}
-          >
-            <div className="flex items-center mb-3">
-              <Icon className="w-6 h-6 mr-2 text-[#344E41]" />
-              <h3 className="text-lg font-semibold text-[#344E41]">{title}</h3>
-            </div>
-            <p className="text-sm text-[#344E41]/80">{desc}</p>
-          </motion.div>
-        ))}
+          {/* Feature Boxes for small screens: vertical layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:block gap-6 md:gap-0">
+            {steps.map(({ id, title, desc, style, icon: Icon }, i) => (
+              <motion.div
+                key={id}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={boxVariants}
+                className={`w-full md:w-72 ${style} md:absolute p-5 sm:p-6 rounded-2xl shadow-md bg-gradient-to-br from-[#A3B18A] to-[#DAD7CD]`}
+              >
+                <div className="flex items-center mb-3">
+                  <Icon className="w-6 h-6 mr-2 text-[#344E41]" />
+                  <h3 className="text-base sm:text-lg font-semibold text-[#344E41]">
+                    {title}
+                  </h3>
+                </div>
+                <p className="text-sm text-[#344E41]/80">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
