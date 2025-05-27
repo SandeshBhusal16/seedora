@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 bg-white text-black">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-24 px-4">
         {/* Logo on the Left */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center px-9">
           <img
             src={logo}
             alt="Seedora Logo"
