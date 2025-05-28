@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Search, Lightbulb, Pencil, BarChart2 } from "lucide-react";
+import workingImage from "../assets/images/working2b.png";
 
 const steps = [
   {
@@ -53,9 +54,9 @@ export default function HowSeedoraDelivers() {
       <div className="flex justify-center w-full">
         <div className="relative max-w-6xl min-h-[700px] md:h-[700px] px-4 w-full ">
           {/* Center Illustration */}
-          <div className="  md:absolute top-0 md:top-1/2 left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10 mb-10 md:mb-0">
+          <div className="md:absolute top-0 md:top-1/2 left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 z-10 mb-10 md:mb-0">
             <img
-              src="src/assets/images/working2b.png"
+              src={workingImage}
               alt="Center Illustration"
               className="w-64 sm:w-72 md:w-96 mx-auto h-auto"
             />
