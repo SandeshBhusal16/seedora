@@ -56,18 +56,19 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden fixed left-0 top-0 w-full h-full bg-[#5C7B4C] ease-in-out duration-500"
+            ? "md:hidden fixed left-0 top-0 w-full h-full bg-[#8fb57c] ease-in-out duration-500 "
             : "fixed left-[-100%] top-0 w-full h-full ease-in-out duration-500"
         }
       >
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-between p-4 ">
           <Link to="/" onClick={handleNav}>
             <img
-              src="src/assets/images/logobgremoved.png"
+              src={logo}
               alt="Seedora Logo"
-              className="h-12 w-12 object-contain transform transition-transform duration-300 hover:scale-110"
+              className="h-12 w-12 object-contain transform transition-transform duration-300 hover:scale-110 bg-white rounded-full"
             />
           </Link>
+
           <div onClick={handleNav}>
             <AiOutlineClose size={20} />
           </div>
