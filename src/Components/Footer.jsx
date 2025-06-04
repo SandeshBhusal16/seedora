@@ -22,7 +22,7 @@ const Footer = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3004/subscribe/createsubscription",
+        "https://seedorabackend.vercel.app/subscribe/createsubscription",
         { email }
       );
       if (res.data && res.data.msg) {

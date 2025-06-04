@@ -13,7 +13,7 @@ const ContactUs = () => {
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
@@ -31,13 +31,17 @@ const ContactUs = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:3004/contact/createcontact", formData);
+      const res = await axios.post(
+        "https://seedorabackend.vercel.app/contact/createcontact",
+
+        formData
+      );
       if (res.data && res.data.msg) {
         setSuccess(res.data.msg);
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
     } catch (err) {
-      setError("Failed to send message.");
+      setError("Failed to send message.", err);
     }
   };
 
@@ -55,7 +59,9 @@ const ContactUs = () => {
         {error && <p className="text-red-600">{error}</p>}
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700">Name</label>
+          <label className="block text-sm font-semibold text-gray-700">
+            Name
+          </label>
           <input
             name="name"
             value={formData.name}
@@ -67,7 +73,9 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700">Email</label>
+          <label className="block text-sm font-semibold text-gray-700">
+            Email
+          </label>
           <input
             name="email"
             value={formData.email}
@@ -79,7 +87,9 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700">Phone</label>
+          <label className="block text-sm font-semibold text-gray-700">
+            Phone
+          </label>
           <input
             name="phone"
             value={formData.phone}
@@ -91,7 +101,9 @@ const ContactUs = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700">Message</label>
+          <label className="block text-sm font-semibold text-gray-700">
+            Message
+          </label>
           <textarea
             name="message"
             value={formData.message}
