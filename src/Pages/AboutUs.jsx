@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Project from "../Components/project";
 
 // Animation Variants
 const fadeUp = {
@@ -162,6 +163,8 @@ const AboutUs = () => {
           and scale sustainably.
         </motion.p>
       </div>
+
+      <Project/>
 
       {/* Testimonials */}
       <div className="px-6 md:px-20 py-20 bg-[#DAD7CD] text-[#344E41]">
