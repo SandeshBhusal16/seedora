@@ -32,7 +32,10 @@ export default function BookCall() {
     }
 
     try {
-      const res = await axios.post("http://localhost:3004/bookcall/createbookcall", formData);
+      const res = await axios.post(
+        "https://seedorabackend.vercel.app/bookcall/createbookcall",
+        formData
+      );
       if (res.data && res.data.msg) {
         setSuccess(res.data.msg);
         setFormData({
@@ -60,13 +63,19 @@ export default function BookCall() {
   return (
     <section className="min-h-screen bg-[#DAD7CD] flex items-center justify-center p-6">
       <div className="bg-white max-w-3xl w-full rounded-2xl shadow-xl p-8 space-y-6">
-        <h2 className="text-3xl font-bold text-[#344E41]">Book a Quick 30-Min Call</h2>
+        <h2 className="text-3xl font-bold text-[#344E41]">
+          Book a Quick 30-Min Call
+        </h2>
         <p className="text-[#3A5A40]">
-          Let’s uncover what’s possible for your brand. 
-          In this free session, we’ll talk about your business goals, challenges, and target customers then see how Seedora can help you grow with services like Web Development, SEO, Google Ads, Facebook Ads, or a full marketing plan that brings everything together.
+          Let’s uncover what’s possible for your brand. In this free session,
+          we’ll talk about your business goals, challenges, and target customers
+          then see how Seedora can help you grow with services like Web
+          Development, SEO, Google Ads, Facebook Ads, or a full marketing plan
+          that brings everything together.
         </p>
         <p className="text-sm text-[#588157]">
-          No commitment, just a friendly conversation.<br />
+          No commitment, just a friendly conversation.
+          <br />
           Limited slots per week.
         </p>
 
