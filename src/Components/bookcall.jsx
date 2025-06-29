@@ -12,6 +12,7 @@ export default function BookCall() {
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // <-- loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +20,7 @@ export default function BookCall() {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true); // Set loading state to true
     e.preventDefault();
     setSuccess("");
     setError("");
@@ -57,6 +59,8 @@ export default function BookCall() {
       }
     } catch (err) {
       setError("Failed to book the call. Please try again later.");
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -140,7 +144,7 @@ export default function BookCall() {
             type="submit"
             className="w-full bg-[#3A5A40] text-white py-3 rounded-lg font-semibold hover:bg-[#344E41] transition"
           >
-            Book Now
+            {loading ? "Booking...." : "Book Now"}
           </button>
         </form>
       </div>
