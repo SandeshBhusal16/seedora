@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import axios from "axios";
-
+import chloroleaf from "../assets/images/chloroleaf.jpg";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState("");
@@ -150,6 +145,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Seedora Agency. All rights
             reserved.
           </p>
+
+          <div className="flex items-center space-x-3">
+            <span>Powered by Chloroleaf</span>
+            <img className="w-10" src={chloroleaf} alt="" />
+          </div>
           <div className="flex space-x-5 mt-6 md:mt-0">
             <Link
               to="https://www.facebook.com/profile.php?id=61576215620449"
